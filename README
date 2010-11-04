@@ -1,0 +1,11 @@
+Put this in your .git/config
+
+[svn-remote "svn"]
+	url = https://nhibernate.svn.sourceforge.net/svnroot/nhibernate/trunk
+	fetch = :refs/remotes/git-svn
+
+Then run 
+
+git svn fetch -r HEAD
+
+Now you're ok to go.
