@@ -238,13 +238,6 @@ namespace NHibernate.Linq.Visitors
                         // still, but might be more work
                         var lhs2 = VisitExpression(expression.Left).AsExpression();
                         var rhs2 = VisitExpression(expression.Right).AsExpression();
-
-                        if (expression.Right is ConstantExpression
-                            && expression.Right.Type.IsNullableOrReference()
-                            && ((ConstantExpression)expression.Right).Value == null)
-                        {
-                            return _hqlTreeBuilder.IsNull(lhs2);
-                        }
                         
                         return _hqlTreeBuilder.BooleanOr(
                                 _hqlTreeBuilder.BooleanAnd(
@@ -282,13 +275,6 @@ namespace NHibernate.Linq.Visitors
                         var lhs3 = VisitExpression(expression.Left).AsExpression();
                         var rhs3 = VisitExpression(expression.Right).AsExpression();
 
-                        if (expression.Right is ConstantExpression
-                            && expression.Right.Type.IsNullableOrReference()
-                            && ((ConstantExpression)expression.Right).Value == null)
-                        {
-                            return _hqlTreeBuilder.IsNotNull(lhs2);
-                        }
-                        
                         return
                             _hqlTreeBuilder.BooleanOr(
                                 _hqlTreeBuilder.BooleanOr(

@@ -30,16 +30,16 @@ namespace NHibernate.ByteCode.Castle
 						invocation.ReturnValue = result;
 					}
 				}
-				else if (ReflectHelper.IsPropertySet(invocation.Method))
-				{
-					FieldInterceptor.MarkDirty();
-					FieldInterceptor.Intercept(invocation.InvocationTarget, ReflectHelper.GetPropertyName(invocation.Method), null);
-					invocation.Proceed();
-				}
-				else
-				{
-					invocation.Proceed();					
-				}
+                else if (ReflectHelper.IsPropertySet(invocation.Method))
+                {
+                    FieldInterceptor.MarkDirty();
+                    FieldInterceptor.Intercept(invocation.InvocationTarget, ReflectHelper.GetPropertyName(invocation.Method), null);
+                    invocation.Proceed();
+                }
+                else
+                {
+                    invocation.Proceed();
+                }
 			}
 			else
 			{
