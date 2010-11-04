@@ -1,0 +1,13 @@
+bin/
+obj/
+*.suo
+*.user
+
+*.cache 
+*.sln.cache
+AssemblyInfo.cs
+
+NHibernate.dll
+/lib/net/3.5/NHibernate.dll
+
+/build/
