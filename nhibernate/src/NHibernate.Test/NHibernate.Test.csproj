@@ -30,6 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <NoWarn>3001%3b3002%3b3003%3b3004%3b3005</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,6 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
+    <NoWarn>3001%3b3002%3b3003%3b3004%3b3005</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Antlr3.Runtime, Version=3.1.0.39271, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
@@ -446,6 +448,7 @@
     <Compile Include="Linq\MethodCallTests.cs" />
     <Compile Include="Linq\MiscellaneousTextFixture.cs" />
     <Compile Include="Linq\NorthwindDbCreator.cs" />
+    <Compile Include="Linq\NullComparisonTests.cs" />
     <Compile Include="Linq\ObjectDumper.cs" />
     <Compile Include="Linq\OrderByTests.cs" />
     <Compile Include="Linq\PagingTests.cs" />
@@ -491,6 +494,9 @@
     <Compile Include="NHSpecificTest\NH2202\Model.cs" />
     <Compile Include="NHSpecificTest\NH2224\Domain.cs" />
     <Compile Include="NHSpecificTest\NH2224\Fixture.cs" />
+    <Compile Include="NHSpecificTest\NH2244\A.cs" />
+    <Compile Include="NHSpecificTest\NH2244\Fixture.cs" />
+    <Compile Include="NHSpecificTest\NH2244\PhoneNumber.cs" />
     <Compile Include="NHSpecificTest\NH2245\Fixture.cs" />
     <Compile Include="NHSpecificTest\NH2245\Model.cs" />
     <Compile Include="NHSpecificTest\NH2266\Domain.cs" />
@@ -540,6 +546,19 @@
     <Compile Include="NHSpecificTest\NH2392\Fixture.cs" />
     <Compile Include="NHSpecificTest\NH2392\PhoneNumber.cs" />
     <Compile Include="NHSpecificTest\NH2392\PhoneNumberUserType.cs" />
+    <Compile Include="NHSpecificTest\NH2394\A.cs" />
+    <Compile Include="NHSpecificTest\NH2394\EnumStringUserType.cs" />
+    <Compile Include="NHSpecificTest\NH2394\Fixture.cs" />
+    <Compile Include="NHSpecificTest\NH2394\PhoneNumber.cs" />
+    <Compile Include="NHSpecificTest\NH2394\PhoneNumberUserType.cs" />
+    <Compile Include="NHSpecificTest\NH2409\Contest.cs" />
+    <Compile Include="NHSpecificTest\NH2409\Fixture.cs" />
+    <Compile Include="NHSpecificTest\NH2409\Message.cs" />
+    <Compile Include="NHSpecificTest\NH2409\MessageReading.cs" />
+    <Compile Include="NHSpecificTest\NH2409\User.cs" />
+    <Compile Include="NHSpecificTest\NH2420\DummyEnlistment.cs" />
+    <Compile Include="NHSpecificTest\NH2420\Fixture.cs" />
+    <Compile Include="NHSpecificTest\NH2420\MyTable.cs" />
     <Compile Include="PolymorphicGetAndLoad\Domain.cs" />
     <Compile Include="PolymorphicGetAndLoad\PolymorphicGetAndLoadTest.cs" />
     <Compile Include="TypesTest\CharClass.cs" />
@@ -1832,6 +1851,8 @@
     <EmbeddedResource Include="NHSpecificTest\NH2202\Mappings.hbm.xml" />
     <EmbeddedResource Include="NHSpecificTest\NH1869\Mappings.hbm.xml" />
     <EmbeddedResource Include="NHSpecificTest\NH2392\Mappings.hbm.xml" />
+    <EmbeddedResource Include="NHSpecificTest\NH2409\Mappings.hbm.xml" />
+    <EmbeddedResource Include="NHSpecificTest\NH2420\Mappings.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NHibernate.ByteCode.Castle\NHibernate.ByteCode.Castle.csproj">
@@ -2320,6 +2341,8 @@
     <EmbeddedResource Include="NHSpecificTest\NH1291AnonExample\Mappings.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="NHSpecificTest\NH2244\Mappings.hbm.xml" />
+    <EmbeddedResource Include="NHSpecificTest\NH2394\Mappings.hbm.xml" />
     <EmbeddedResource Include="DynamicEntity\Interceptor\Customer.hbm.xml" />
     <EmbeddedResource Include="Any\Person.hbm.xml" />
     <EmbeddedResource Include="Any\Properties.hbm.xml" />
@@ -2696,7 +2719,7 @@
     <EmbeddedResource Include="DynamicEntity\Tuplizer\Customer.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NHSpecificTest\NH2392" />
+    <Folder Include="NHSpecificTest\NH2420" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
